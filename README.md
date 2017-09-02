@@ -62,11 +62,9 @@ the file must match the name of the containing folder.
 For easy access to the `FluentPDO` DB abstraction layer and the `Dwoo` Template Engine extend the
 class from `PluginAbstract`
 
-By extending PluginAbstract you will gain access to the following references
+By extending PluginAbstract you will gain access to the ContainerBuilder reference
 
     $this->container // returns instance of ContainerBuilder
-    $this->dbal //returns instance of FluentPDO
-    $this->engine //returns instance of Dwoo/Core
     
 #### Example of a Plugin class:    
 
@@ -198,6 +196,11 @@ context (when user is logged in).
 
 ##### Controller Example
 
+By extending MajimaController you will gain access to the following references
+
+    $this->dbal //returns instance of FluentPDO
+    $this->engine //returns instance of Dwoo/Core
+
 ```php
 class MyController extends MajimaController
 {
@@ -217,7 +220,7 @@ class MyController extends MajimaController
 }
 ```
 
-[FluentPDO](https://github.com/envms/fluentpdo) is used as DBAL  
+[FluentPDO](https://github.com/envms/fluentpdo) is a query builder  
 [Dwoo](https://github.com/dwoo-project/dwoo) is the template engine of majima  
 Use `assign` to pass an array of data to views.  
 
