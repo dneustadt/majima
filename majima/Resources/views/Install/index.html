@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>majima installer</title>
+    <style>
+        @font-face {
+            font-family: 'sloped';
+            src: url('../web/fonts/sloped.woff') format('woff');
+        }
+        h1.logo {
+            font-family: 'sloped', sans-serif;
+            font-size: 60pt;
+            font-weight: normal;
+            margin: 0 0 15px 0;
+            color: #283593;
+        }
+        section {
+            width: 50%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 50px 0;
+            font-family: sans-serif;
+            font-size: 12pt;
+        }
+        div {
+            margin: 0 0 10px 0;
+        }
+        label {
+            display: block;
+            font-weight: 100;
+        }
+        input, button {
+            width: 100%;
+            font-size: 12pt;
+            font-weight: 100;
+            border: 1px solid #e0e0e0;
+            padding: 5px;
+        }
+        button {
+            width: auto;
+            border: 0;
+            background-color: #283593;
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <form action="#" method="POST">
+        <h1 class="logo">majima</h1>
+        <div>
+            <label for="db_host">DB Host</label>
+            <input type="text" name="db_host" id="db_host" value="localhost" required>
+        </div>
+        <div>
+            <label for="db_port">DB Port</label>
+            <input type="text" name="db_port" id="db_port" value="3306" required>
+        </div>
+        <div>
+            <label for="db_name">DB Name</label>
+            <input type="text" name="db_name" id="db_name" required>
+        </div>
+        <div>
+            <label for="db_user">DB Username</label>
+            <input type="text" name="db_user" id="db_user" required>
+        </div>
+        <div>
+            <label for="db_passw">DB Password</label>
+            <input type="password" name="db_passw" id="db_passw" required>
+        </div>
+        <div>
+            <label for="admin_user">Admin Username</label>
+            <input type="text" name="admin_user" id="admin_user" required>
+        </div>
+        <div>
+            <label for="admin_passw">Admin Password</label>
+            <input type="password" name="admin_passw" id="admin_passw" required>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</section>
+
+</body>
+</html>

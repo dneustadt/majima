@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>majima installer</title>
+    <style>
+        @font-face {
+            font-family: 'sloped';
+            src: url('../web/fonts/sloped.woff') format('woff');
+        }
+        h1.logo {
+            font-family: 'sloped', sans-serif;
+            font-size: 60pt;
+            font-weight: normal;
+            margin: 0 0 15px 0;
+            color: #283593;
+        }
+        section {
+            width: 50%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 50px 0;
+            font-family: sans-serif;
+            font-size: 12pt;
+            font-weight: 100;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <form action="#" method="POST">
+        <h1 class="logo">majima</h1>
+        <p>Success!</p>
+        <p>Try navigating to the homepage now.</p>
+        <p>
+            Once the cache has been generated, the route to this installer will redirect to
+            the homepage instead.
+        </p>
+        <p>
+            If something goes wrong or you mistyped something, delete the contents of
+            <em>/var/conf</em> and <em>/var/cache</em>. Then try running this installer again.
+        </p>
+    </form>
+</section>
+
+</body>
+</html>

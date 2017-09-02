@@ -1,0 +1,16 @@
+.idea
+composer.lock
+var/cache/*
+!var/cache/.gitkeep
+var/logs/*
+!var/logs/.gitkeep
+var/conf/*
+!var/conf/.gitkeep
+vendor
+web/css/style.min.css
+web/css/style.backend.min.css
+web/js/scripts.min.js
+web/js/scripts.backend.min.js
+plugins/*/*
+upload/img/*
+!upload/img/.gitkeep
