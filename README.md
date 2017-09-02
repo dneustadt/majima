@@ -7,6 +7,18 @@ majima is a lightweight PHP framework that is based on [Symfony](https://github.
 components. It features a plugin system that relies heavily on the concept of dependency injection 
 and should suffice as a foundation for most web applications.
 
+### Features
+
+* Plugin System
+  * Template inheritance
+  * Collectors for JS and LESS compiling
+  * install and update routines
+* Template Engine
+  * functions for inheriting, routing and asset linking
+  * HTML bootstrap template
+* Query Builder
+* User Provider
+
 ### Server requirements
 
 - PHP 5.6.4 or above
@@ -235,3 +247,23 @@ conventions, you can render a template and return a response yourself:
         ['Content-Type' => 'text/html']
     );
 ```    
+
+##### Template functions
+
+Adding to Dwoo's own functions majima introduces a few more:
+
+    {inherits "Index/index.tpl"}
+
+Virtually the same as Dwoo's `extends` but allows you to inherit templates
+from the majima's base HTML bootstrap and views of previously loaded plugins.
+
+    {url "index_index" array('foo' => $bar)}
+    
+Will generate the url of a registered route. Optionally pass
+an array of GET parameters.
+
+    {link "/web/css/style.min.css", $.cache_buster}
+    
+Get the absolute path to an asset. Optionally pass a cache buster value.
+You can use the global `$.cache_buster` which will be regenerated once the
+cache is emptied.
