@@ -36,7 +36,7 @@ class DwooEngineDecorator extends DwooEngineFactory
 
         $pluginResourcesDirs = $container->getParameter('plugins.view.dirs');
 
-        foreach($pluginResourcesDirs as $pluginResourcesDir) {
+        foreach ($pluginResourcesDirs as $pluginResourcesDir) {
             $viewsDir = $pluginResourcesDir;
             if (!is_dir($viewsDir)) {
                 continue;

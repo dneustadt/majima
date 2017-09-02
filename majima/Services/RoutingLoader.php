@@ -45,7 +45,7 @@ class RoutingLoader implements LoaderInterface
 
     /**
      * @param mixed $resource
-     * @param null $type
+     * @param string|null $type
      * @return RouteCollection
      */
     public function load($resource, $type = null)
@@ -74,7 +74,7 @@ class RoutingLoader implements LoaderInterface
 
     /**
      * @param mixed $resource
-     * @param null $type
+     * @param string|null $type
      * @return bool
      */
     public function supports($resource, $type = null)
