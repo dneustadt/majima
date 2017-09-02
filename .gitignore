@@ -11,6 +11,7 @@ web/css/style.min.css
 web/css/style.backend.min.css
 web/js/scripts.min.js
 web/js/scripts.backend.min.js
+plugins/*
 plugins/*/*
 upload/img/*
 !upload/img/.gitkeep
