@@ -59,10 +59,7 @@ To create a new plugin first make a new directory under the `plugins` directory.
 it will be `MyPlugin`. Create a new class `MyPlugin.php` within that new directory. The name of
 the file must match the name of the containing folder.
 
-For easy access to the `FluentPDO` DB abstraction layer and the `Dwoo` Template Engine extend the
-class from `PluginAbstract`
-
-By extending PluginAbstract you will gain access to the ContainerBuilder reference
+By extending `PluginAbstract` you will gain access to the `ContainerBuilder` reference
 
     $this->container // returns instance of ContainerBuilder
     
@@ -196,7 +193,7 @@ context (when user is logged in).
 
 ##### Controller Example
 
-By extending MajimaController you will gain access to the following references
+By extending `MajimaController` you will gain access to the following references
 
     $this->dbal //returns instance of FluentPDO
     $this->engine //returns instance of Dwoo/Core
