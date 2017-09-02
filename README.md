@@ -51,6 +51,10 @@ you should visit: `http://example.com/majima/install`
 
 ### Plugins
 
+**For a real life examples see the demo plugins:**
+* <https://github.com/dneustadt/majima-grid>
+* <https://github.com/dneustadt/majima-pages>
+
 To create a new plugin first make a new directory under the `plugins` directory. In this example
 it will be `MyPlugin`. Create a new class `MyPlugin.php` within that new directory. The name of
 the file must match the name of the containing folder.
@@ -230,5 +234,3 @@ conventions, you can render a template and return a response yourself:
         ['Content-Type' => 'text/html']
     );
 ```    
-
-For a real life example see <https://github.com/dneustadt/majima-grid>
