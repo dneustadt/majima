@@ -1,5 +1,6 @@
 # majima
 
+[![Scrutinizer](https://scrutinizer-ci.com/g/dneustadt/majima/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dneustadt/majima/?branch=master)
 [![Join the chat at https://gitter.im/majima-framework/Lobby](https://badges.gitter.im/majima-framework/Lobby.svg)](https://gitter.im/majima-framework/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 - **License**: MIT
