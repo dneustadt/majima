@@ -197,7 +197,7 @@ By extending `MajimaController` you will gain access to the following references
 
     $this->container //returns instance of DependencyInjection\Container
     $this->dbal //returns instance of FluentPDO
-    $this->engine //returns instance of Dwoo/Core
+    $this->engine //returns instance of Dwoo\Core
 
 ```php
 class MyController extends MajimaController
