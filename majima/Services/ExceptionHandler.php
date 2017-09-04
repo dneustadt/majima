@@ -69,7 +69,7 @@ class ExceptionHandler implements ExceptionHandlerInterface
             "exception" => $event->getException()->getTraceAsString()
         ]);
         $response = $engine->render('Exception/error.tpl');
-        $response->setStatusCode(500);
+        $response->setStatusCode(400);
         $event->setResponse(
             $response
         );
