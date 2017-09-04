@@ -11,8 +11,8 @@
 use Symfony\Component\HttpFoundation\Request;
 use Majima\MajimaKernel;
 
-CONST BASE_DIR = __DIR__ . DIRECTORY_SEPARATOR;
-CONST VERSION = "0.1.0";
+const BASE_DIR = __DIR__ . DIRECTORY_SEPARATOR;
+const VERSION = "0.1.0";
 
 require_once(BASE_DIR . join(DIRECTORY_SEPARATOR, ['vendor', 'autoload.php']));
 

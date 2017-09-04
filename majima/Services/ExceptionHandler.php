@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 /**
  * Class ExceptionHandler
- * @package Golli\Services
+ * @package Majima\Services
  */
 class ExceptionHandler implements ExceptionHandlerInterface
 {
