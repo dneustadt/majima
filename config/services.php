@@ -12,6 +12,7 @@ use Majima\EventListener\BaseControllerListener;
 use Majima\Services\ConfigService;
 use Majima\Services\ControllersService;
 use Majima\Services\DwooEngineFactory;
+use Majima\Services\ExceptionHandler;
 use Majima\Services\FluentPdoFactory;
 use Majima\Services\RoutesService;
 use Majima\Services\RoutingLoader;
@@ -60,6 +61,11 @@ $container->setDefinition('majima.admin_provider', new Definition(
     MajimaAdminProvider::class,
     [new Reference('service_container'), new Reference('dbal')]
 ));
+
+$container->setDefinition('majima.exception_handler', new Definition(
+    ExceptionHandler::class,
+    [new Reference('service_container'), new Reference('router')]
+))->addTag('kernel.event_listener', ['event' => 'kernel.exception', 'method' => 'onKernelException']);
 
 $container->setDefinition('scssphp.compiler', new Definition(
     Compiler::class,
