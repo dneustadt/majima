@@ -242,13 +242,8 @@ you don't have to return anything in your action. If you're outside of the
 conventions, you can render a template and return a response yourself:
 
 ```php
-    $template = $this->engine->render('/path/to/my/template.tpl');
-
-    return new Response(
-        $template,
-        200,
-        ['Content-Type' => 'text/html']
-    );
+    // returns Response with rendered content
+    return $this->engine->render('/path/to/my/template.tpl');
 ```    
 
 ##### Template functions
