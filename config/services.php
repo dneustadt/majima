@@ -64,7 +64,7 @@ $container->setDefinition('majima.admin_provider', new Definition(
 
 $container->setDefinition('majima.exception_handler', new Definition(
     ExceptionHandler::class,
-    [new Reference('service_container'), new Reference('router')]
+    [new Reference('service_container')]
 ))->addTag('kernel.event_listener', ['event' => 'kernel.exception', 'method' => 'onKernelException']);
 
 $container->setDefinition('scssphp.compiler', new Definition(

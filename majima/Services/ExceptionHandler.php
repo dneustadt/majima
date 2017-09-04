@@ -5,7 +5,6 @@ namespace Majima\Services;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\AnonymousToken;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
@@ -21,22 +20,14 @@ class ExceptionHandler implements ExceptionHandlerInterface
     private $container;
 
     /**
-     * @var RouterInterface
-     */
-    private $router;
-
-    /**
      * ExceptionHandler constructor.
      * @param Container $container
-     * @param RouterInterface $router
      */
     public function __construct(
-        Container $container,
-        RouterInterface $router
+        Container $container
     )
     {
         $this->container = $container;
-        $this->router = $router;
     }
 
     /**
