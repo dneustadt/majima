@@ -13,6 +13,7 @@ namespace Majima\EventListener;
 use Majima\Services\DwooEngineFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -55,10 +56,13 @@ class BaseControllerListener implements EventSubscriberInterface
         $controller = $event->getController();
         if ($this->isBaseController($controller)) {
             $controllerAction = explode(':', $event->getRequest()->attributes->get('_controller'));
-            call_user_func(
+            $response = call_user_func(
                 [$controller[0], $controllerAction[1]],
                 $event->getRequest()
             );
+            if ($response instanceof Response) {
+                return;
+            }
             /** @var DwooEngineFactory $engine */
             $engine = $this->container->get('dwoo.engine');
             $tpl = ucfirst(str_replace('_', '/', $event->getRequest()->attributes->get('_route')));
