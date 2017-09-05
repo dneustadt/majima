@@ -14,10 +14,10 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\EquatableInterface;
 
 /**
- * Class MajimaAdmin
+ * Class MajimaUser
  * @package Majima\Security
  */
-class MajimaAdmin implements UserInterface, EquatableInterface
+class MajimaUser implements UserInterface, EquatableInterface
 {
     /**
      * @var string
@@ -40,7 +40,7 @@ class MajimaAdmin implements UserInterface, EquatableInterface
     private $roles;
 
     /**
-     * MajimaAdmin constructor.
+     * MajimaUser constructor.
      * @param $username
      * @param $password
      * @param $salt
@@ -96,7 +96,7 @@ class MajimaAdmin implements UserInterface, EquatableInterface
      */
     public function isEqualTo(UserInterface $user)
     {
-        if (!$user instanceof MajimaAdmin) {
+        if (!$user instanceof MajimaUser) {
             return false;
         }
 

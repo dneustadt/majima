@@ -16,7 +16,7 @@ use Majima\Services\ExceptionHandler;
 use Majima\Services\FluentPdoFactory;
 use Majima\Services\RoutesService;
 use Majima\Services\RoutingLoader;
-use Majima\Security\MajimaAdminProvider;
+use Majima\Security\MajimaUserProvider;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 use Leafo\ScssPhp\Compiler;
@@ -58,7 +58,7 @@ $container->setDefinition('majima.routing_loader', new Definition(
 ))->addTag('routing.loader');
 
 $container->setDefinition('majima.admin_provider', new Definition(
-    MajimaAdminProvider::class,
+    MajimaUserProvider::class,
     [new Reference('service_container'), new Reference('dbal')]
 ));
 

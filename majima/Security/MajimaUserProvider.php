@@ -17,10 +17,10 @@ use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 
 /**
- * Class MajimaAdminProvider
+ * Class MajimaUserProvider
  * @package Majima\Security
  */
-class MajimaAdminProvider implements UserProviderInterface
+class MajimaUserProvider implements UserProviderInterface
 {
     /**
      * @var Container
@@ -33,7 +33,7 @@ class MajimaAdminProvider implements UserProviderInterface
     private $dbal;
 
     /**
-     * MajimaAdminProvider constructor.
+     * MajimaUserProvider constructor.
      * @param Container $container
      * @param \FluentPDO $dbal
      */
@@ -45,7 +45,7 @@ class MajimaAdminProvider implements UserProviderInterface
 
     /**
      * @param string $username
-     * @return MajimaAdmin
+     * @return MajimaUser
      * @throws \Exception
      */
     public function loadUserByUsername($username)
@@ -56,7 +56,14 @@ class MajimaAdminProvider implements UserProviderInterface
             ->fetch();
 
         if ($user) {
-            return new MajimaAdmin($username, $user['password'], $user['salt'], ['ROLE_ADMIN']);
+            $roles = $this->dbal
+                ->from('users_roles')
+                ->select(NULL)
+                ->select('role')
+                ->where('userID', $user['id'])
+                ->fetchPairs('role', 'role');
+
+            return new MajimaUser($username, $user['password'], $user['salt'], is_array($roles) ? $roles : ['ROLE_USER']);
         }
 
         throw new UsernameNotFoundException(
@@ -66,11 +73,11 @@ class MajimaAdminProvider implements UserProviderInterface
 
     /**
      * @param UserInterface $user
-     * @return MajimaAdmin
+     * @return MajimaUser
      */
     public function refreshUser(UserInterface $user)
     {
-        if (!$user instanceof MajimaAdmin) {
+        if (!$user instanceof MajimaUser) {
             throw new UnsupportedUserException(
                 sprintf('Instances of "%s" are not supported.', get_class($user))
             );
@@ -85,6 +92,6 @@ class MajimaAdminProvider implements UserProviderInterface
      */
     public function supportsClass($class)
     {
-        return MajimaAdmin::class === $class;
+        return MajimaUser::class === $class;
     }
 }

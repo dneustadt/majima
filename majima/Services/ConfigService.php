@@ -42,7 +42,7 @@ class ConfigService implements ConfigServiceInterface
         $securityContext = $this->container->get('security.authorization_checker');
         $router = $this->container->get('router');
         $config = [
-            'admin' => $securityContext->isGranted('IS_AUTHENTICATED_FULLY'),
+            'admin' => $securityContext->isGranted('ROLE_ADMIN'),
             'base_url' => $router->getContext()->getBaseUrl(),
             'path_info' => $router->getContext()->getPathInfo()
         ];

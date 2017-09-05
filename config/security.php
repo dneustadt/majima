@@ -44,7 +44,7 @@ $container->loadFromExtension('security', [
         ['path' => '^/admin/login/', 'role' => 'IS_AUTHENTICATED_ANONYMOUSLY'],
     ],
     'encoders' => [
-        \Majima\Security\MajimaAdmin::class => [
+        \Majima\Security\MajimaUser::class => [
             'algorithm' => 'sha512',
             'encode_as_base64' => true,
             'iterations' => 5000

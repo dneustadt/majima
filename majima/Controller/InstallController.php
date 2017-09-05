@@ -111,7 +111,14 @@ class InstallController
             ->values([
                 'name' => $adminUser,
                 'password' => $adminPassword,
-                'salt' => $adminSha1
+                'salt' => $adminSha1,
+            ])
+            ->execute();
+
+        $qb->insertInto('users_roles')
+            ->values([
+                'userID' => 1,
+                'role' => 'ROLE_ADMIN',
             ])
             ->execute();
 
