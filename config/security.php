@@ -11,7 +11,7 @@
 $container->loadFromExtension('security', [
     'providers' => [
         'majima' => [
-            'id' => 'majima.admin_provider',
+            'id' => 'majima.user_provider',
         ],
     ],
     'firewalls' => [

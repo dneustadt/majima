@@ -57,7 +57,7 @@ $container->setDefinition('majima.routing_loader', new Definition(
     [new Reference('service_container'), new Reference('majima.routes')]
 ))->addTag('routing.loader');
 
-$container->setDefinition('majima.admin_provider', new Definition(
+$container->setDefinition('majima.user_provider', new Definition(
     MajimaUserProvider::class,
     [new Reference('service_container'), new Reference('dbal')]
 ));
